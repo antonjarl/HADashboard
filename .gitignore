@@ -1,0 +1,19 @@
+# Files
+*.conf
+*.db
+*.db-journal
+*.log
+*.noload
+*.sqlite
+*.txt
+*.xml
+.HA_VERSION
+.DS_Store
+secrets.yaml
+
+# Directories
+apps
+
+# Python Caches
+__pycache__
+*.pyc
