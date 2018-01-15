@@ -2,9 +2,9 @@
 ## Main arguments, all optional
 ##
 title: Main Panel
-widget_dimensions: [100, 100]
+widget_dimensions: [80, 80]
 widget_size: [1, 1]
-widget_margins: [5, 5]
+widget_margins: [20, 20]
 columns: 10
 global_parameters:
     use_comma: 0
@@ -47,9 +47,20 @@ leavehome:
 
 weather:
     widget_type: weather
-    widget_style: "background: #fff;"
+    title: Weather
+
+upstairs_temperature:
+    widget_type: sensor
+    entity: sensor.fibaro_system_fgsd002_smoke_sensor_temperature
+    title: Temperature upstairs
+    units: "&deg;C"
+    precision: 1
+
+
 
 layout:
     - weather(6x2), clock(4x2)
     -
-    - kitchen(4x1), reload(2x1), leavehome(4x1)
+    - kitchen(4x2), reload(2x2), leavehome(4x2)
+    -
+    - upstairs_temperature(4x2)
