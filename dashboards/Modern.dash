@@ -1,0 +1,55 @@
+##
+## Main arguments, all optional
+##
+title: Main Panel
+widget_dimensions: [100, 100]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 10
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+
+kitchen:
+    widget_type: light
+    title: Köket
+    entity: light.dimmer_kitchen_level
+    icon_on:  fa-lightbulb-o
+    icon_off:  fa-lightbulb-o
+    warn: 1
+
+clock:
+    widget_type: clock
+    time_format: 24hr
+
+reload:
+    widget_type: reload
+    title: Reload
+    icon_inactive: mdi-autorenew
+
+mainpanel:
+    widget_type: navigate
+    dashboard: MainPanel
+    title: Main panel
+    icon_inactive: mdi-grid
+    args:
+      timeout: 10
+      return: Hello
+
+leavehome:
+    widget_type: group
+    entity: group.all_lights
+    title: Leave home
+    monitored_entity: light.dimmer_kitchen_level
+    icon_on: mdi-logout
+    icon_off: mdi-login
+
+weather:
+    widget_type: weather
+    widget_style: "background: #fff;"
+
+layout:
+    - weather(6x2), clock(4x2)
+    -
+    - kitchen(4x1), reload(2x1), leavehome(4x1)

@@ -1,0 +1,67 @@
+##
+## Main arguments, all optional
+##
+title: Main Panel
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+
+iframe:
+    widget_type: iframe
+    refresh: 1800
+    img_list:
+      - http://decoholic.org/wp-content/uploads/2014/12/scandinavian-design-1.jpg
+      - http://cdn.freshome.com/wp-content/uploads/2014/01/6-Series-7-Scandinavian-Design.jpg
+      - http://www.greatwallart.com/wp-content/uploads/2016/04/swedish-design-3-scandinavian-design-also-typical-scandinavian-light-interior-images-scandinavian-interior-design.jpg
+      - http://www.contemporist.com/wp-content/uploads/2016/07/scandinavian-interiors_140716_01-800x420.jpg
+      - http://cdn.homedit.com/wp-content/uploads/2015/04/Minimal-wood-treatment.jpg
+
+kitchen:
+    widget_type: light
+    title: Köket
+    entity: light.dimmer_kitchen_level
+    icon_on:  fa-lightbulb-o
+    icon_off:  fa-lightbulb-o
+    warn: 1
+
+clock:
+    widget_type: clock
+    time_format: 24hr
+
+reload:
+    widget_type: reload
+    title: Reload
+    icon_inactive: mdi-autorenew
+
+mainpanel:
+    widget_type: navigate
+    dashboard: MainPanel
+    title: Main panel
+    icon_inactive: mdi-grid
+    args:
+      timeout: 10
+      return: Hello
+
+leavehome:
+    widget_type: group
+    entity: group.all_lights
+    title: Leave home
+    monitored_entity: light.dimmer_kitchen_level
+    icon_on: mdi-logout
+    icon_off: mdi-login
+
+weather:
+    widget_type: weather
+
+layout:
+    - iframe(8x5)
+    - spacer(8x1)
+    - spacer(8x1)
+    - spacer(8x1)
+    - spacer(8x1)
+    - kitchen, clock(2x1), weather(2x1), reload, leavehome, mainpanel

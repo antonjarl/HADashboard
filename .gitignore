@@ -9,6 +9,7 @@
 *.xml
 .HA_VERSION
 .DS_Store
+._.DS_Store
 secrets.yaml
 
 # Directories
