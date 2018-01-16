@@ -4,7 +4,7 @@
 My configuration of the Home Assistant Dashboard
 
 
-Reference-style: 
+This is how it looks now, Ja 16, 2018 
 ![alt text][screenshot]
 
 
